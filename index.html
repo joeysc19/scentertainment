@@ -656,17 +656,18 @@ src="https://www.youtube.com/embed/tgbNymZ7vqY">
 		<iframe src="https://player.vimeo.com/video/887808035?h=01205d0964" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 	</div>	
 
-	<h2>HTML Forms</h2>
+<form action="/action_page.php" method="post">
+  <!-- Name Field -->
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="user_name" required><br><br>
 
-<form action="/action_page.php">
-  <label for="fname">First name:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="lname">Last name:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  <!-- Email Field -->
+  <label for="email">Email Address:</label><br>
+  <input type="email" id="email" name="user_email" required><br><br>
+  
+  <!-- Submit Button -->
   <input type="submit" value="Submit">
-</form> 
-
-<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+</form>
 	
 </body>
 </html>
