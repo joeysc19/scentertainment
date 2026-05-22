@@ -1,320 +1,317 @@
-
 <!DOCTYPE html>
 <html lang="en-AU">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Coast Review // Live Arts & Culture</title>
+    <title>SUNNY COAST SOUNDS // LIVE RADAR</title>
     <style>
         :root {
-            --bg-color: #fcfbf7;
-            --text-color: #1a1a1a;
-            --border-color: #1a1a1a;
-            --accent-color: #d44b26;
-            --muted-color: #666666;
+            --bright-yellow: #fff200;
+            --electric-purple: #7000ff;
+            --hot-pink: #ff007b;
+            --slime-green: #00ff66;
+            --deep-black: #0d0d0d;
+            --pure-white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            font-family: "Georgia", serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-            line-height: 1.4;
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            background-color: var(--deep-black);
+            color: var(--pure-white);
+            overflow-x: hidden;
+            padding: 1rem;
         }
 
-        .newspaper-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1.5rem;
+        /* Marquee Ticker Effect */
+        .marquee {
+            background: var(--bright-yellow);
+            color: var(--deep-black);
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 0.5rem 0;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transform: rotate(-1.5deg);
+            margin-bottom: 2rem;
+            border: 4px solid var(--pure-white);
         }
 
-        /* Newspaper Header */
+        .marquee-inner {
+            display: inline-block;
+            animation: scroll 20s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Funky Header */
         header {
             text-align: center;
-            border-bottom: 4px double var(--border-color);
-            padding-bottom: 1rem;
-            margin-bottom: 1.5rem;
+            margin: 3rem 0;
+            position: relative;
         }
 
-        .masthead {
-            font-family: "Times New Roman", Times, serif;
-            font-size: 3.5rem;
+        header h1 {
+            font-size: 5rem;
+            line-height: 0.9;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            color: var(--pure-white);
+            text-shadow: 4px 4px 0px var(--hot-pink), 8px 8px 0px var(--electric-purple);
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 3rem; }
+        }
+
+        header p {
+            font-family: 'Arial', sans-serif;
             font-weight: 900;
+            background: var(--slime-green);
+            color: var(--deep-black);
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            margin-top: 1.5rem;
+            font-size: 1rem;
             text-transform: uppercase;
-            letter-spacing: -1px;
-            margin: 0;
-            line-height: 1;
+            transform: skewX(-10deg);
         }
 
-        .tagline {
-            font-style: italic;
-            margin: 0.5rem 0;
-            font-size: 1.1rem;
-            color: var(--muted-color);
-        }
-
-        .sub-header {
-            display: flex;
-            justify-content: space-between;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            padding: 0.4rem 1rem;
-            font-family: "Arial", sans-serif;
-            font-size: 0.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Newspaper Layout Grid */
-        .magazine-grid {
+        /* Grid Layout */
+        .dashboard-grid {
+            max-width: 1300px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: 3fr 2fr;
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            padding: 1rem;
         }
 
-        @media (max-width: 900px) {
-            .magazine-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Left Main Column */
-        .main-stories {
+        /* Funky Brutalist Cards */
+        .gig-card {
+            background: var(--deep-black);
+            border: 5px solid var(--pure-white);
+            box-shadow: 12px 12px 0px var(--electric-purple);
+            transition: all 0.2s ease;
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            position: relative;
         }
 
-        .lead-story {
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 2rem;
+        .gig-card:nth-child(2n) {
+            box-shadow: 12px 12px 0px var(--hot-pink);
         }
 
-        .category-label {
-            font-family: "Arial", sans-serif;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            font-weight: bold;
-            color: var(--accent-color);
-            letter-spacing: 1px;
-            margin: 0 0 0.5rem 0;
+        .gig-card:nth-child(3n) {
+            box-shadow: 12px 12px 0px var(--slime-green);
         }
 
-        h2 {
-            font-size: 2.2rem;
-            font-weight: normal;
-            line-height: 1.1;
-            margin: 0 0 1rem 0;
+        .gig-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 16px 16px 0px var(--bright-yellow);
         }
 
-        h2 a, h3 a {
-            color: var(--text-color);
-            text-decoration: none;
-        }
-
-        h2 a:hover, h3 a:hover {
-            color: var(--accent-color);
-        }
-
-        .meta-info {
-            font-family: "Arial", sans-serif;
-            font-size: 0.8rem;
-            color: var(--muted-color);
-            margin-bottom: 1rem;
-        }
-
-        .article-body {
-            column-count: 2;
-            column-gap: 1.5rem;
-            text-align: justify;
-            font-size: 0.95rem;
-        }
-
-        @media (max-width: 600px) {
-            .article-body {
-                column-count: 1;
-            }
-        }
-
-        .article-body p {
-            margin: 0 0 1rem 0;
-            text-indent: 1.5rem;
-        }
-
-        .article-body p:first-of-type {
-            text-indent: 0;
-        }
-
-        .article-body p:first-of-type::first-letter {
-            font-size: 3.5rem;
-            float: left;
-            line-height: 0.8;
-            padding-right: 8px;
-            font-family: "Times New Roman", serif;
-        }
-
-        /* Secondary Stories Grid */
-        .secondary-stories {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
-        @media (max-width: 600px) {
-            .secondary-stories {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .story-block h3 {
-            font-size: 1.4rem;
-            font-weight: normal;
-            margin: 0 0 0.5rem 0;
-            line-height: 1.2;
-        }
-
-        .story-block p {
-            font-size: 0.9rem;
-            color: #333;
-            margin: 0;
-        }
-
-        /* Right Sidebar (The Gig Wire) */
-        .sidebar {
-            border-left: 1px solid var(--border-color);
-            padding-left: 2rem;
-        }
-
-        @media (max-width: 900px) {
-            .sidebar {
-                border-left: none;
-                border-top: 2px solid var(--border-color);
-                padding-left: 0;
-                padding-top: 1.5rem;
-            }
-        }
-
-        .sidebar-title {
-            font-family: "Times New Roman", serif;
-            font-size: 1.6rem;
-            text-transform: uppercase;
-            border-bottom: 2px solid var(--border-color);
-            margin: 0 0 1.5rem 0;
-            padding-bottom: 0.2rem;
-            letter-spacing: -0.5px;
-        }
-
-        .wire-item {
-            border-bottom: 1px dashed #ccc;
-            padding-bottom: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .wire-item:last-child {
-            border-bottom: none;
-        }
-
-        .wire-date {
-            font-family: "Arial", sans-serif;
-            font-size: 0.75rem;
-            font-weight: bold;
-            background-color: var(--text-color);
-            color: var(--bg-color);
-            padding: 0.1rem 0.4rem;
-            display: inline-block;
-            margin-bottom: 0.4rem;
-        }
-
-        .wire-item h4 {
-            margin: 0 0 0.2rem 0;
+        /* Card Header Frame */
+        .card-banner {
+            border-bottom: 5px solid var(--pure-white);
+            padding: 0.8rem;
             font-size: 1.1rem;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .bg-pink { background-color: var(--hot-pink); color: var(--pure-white); }
+        .bg-purple { background-color: var(--electric-purple); color: var(--pure-white); }
+        .bg-green { background-color: var(--slime-green); color: var(--deep-black); }
+
+        .genre-badge {
+            font-family: 'Arial', sans-serif;
+            font-weight: 900;
+            border: 2px solid currentcolor;
+            padding: 0.1rem 0.5rem;
+            font-size: 0.75rem;
+        }
+
+        /* Card Body */
+        .card-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-body h2 {
+            font-size: 2.2rem;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .card-body p {
+            font-family: 'Arial', sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            color: #e0e0e0;
             font-weight: bold;
         }
 
-        .wire-location {
-            font-family: "Arial", sans-serif;
-            font-size: 0.8rem;
-            font-style: italic;
-            color: var(--accent-color);
-            margin-bottom: 0.4rem;
+        /* Details list */
+        .gig-meta {
+            margin-top: 1.5rem;
+            font-family: 'Arial', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            list-style: none;
+            border-top: 2px dashed #444;
+            padding-top: 1rem;
         }
 
-        .wire-desc {
-            font-size: 0.85rem;
-            margin: 0;
-            color: #444;
+        .gig-meta li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .gig-meta span {
+            color: var(--bright-yellow);
+        }
+
+        /* Action Link Button */
+        .card-footer {
+            padding: 1rem;
+        }
+
+        .action-link {
+            display: block;
+            text-align: center;
+            background: var(--pure-white);
+            color: var(--deep-black);
+            text-decoration: none;
+            padding: 0.8rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            border: 3px solid var(--deep-black);
+            transition: all 0.1s ease;
+        }
+
+        .action-link:hover {
+            background: var(--bright-yellow);
+            color: var(--deep-black);
+            transform: scale(1.02);
         }
 
         footer {
-            margin-top: 3rem;
-            border-top: 1px solid var(--border-color);
-            padding-top: 1rem;
             text-align: center;
-            font-family: "Arial", sans-serif;
-            font-size: 0.75rem;
-            color: var(--muted-color);
+            margin: 5rem 0 2rem 0;
+            font-family: 'Arial', sans-serif;
+            font-weight: 900;
+            font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            color: #666;
         }
     </style>
 </head>
 <body>
 
-    <div class="newspaper-container">
-        
-        <header>
-            <h1 class="masthead">The Coast Review</h1>
-            <p class="tagline">Independent Chronicle of Arts, Music, & Performance on the Sunshine Coast</p>
-            <div class="sub-header">
-                <span>Vol. IV No. 22</span>
-                <span>Saturday, May 23, 2026</span>
-                <span>Price: Free Exchange</span>
+    <!-- Marquee Banner -->
+    <div class="marquee">
+        <div class="marquee-inner">
+            /// LIVE & LOUD ON GUUBI GUBBI COUNTRY /// TONIGHT'S DISCO RUSH /// SUPPORT LOCAL ACTS /// BOOK TICKETS EARLY /// NO ENTRY FEE LIVE MUSIC SESSIONS /// LIVE & LOUD ON GUUBI GUBBI COUNTRY /// TONIGHT'S DISCO RUSH ///
+        </div>
+    </div>
+
+    <header>
+        <h1>Sunny Coast<br>Gigs Radar</h1>
+        <p>Your weekly high-energy sonic filter</p>
+    </header>
+
+    <main class="dashboard-grid">
+
+        <!-- Card 1 -->
+        <div class="gig-card">
+            <div class="card-banner bg-pink">
+                <span>SAT 23 MAY</span>
+                <span class="genre-badge">PSYCH ROCK</span>
             </div>
-        </header>
-
-        <div class="magazine-grid">
-            
-            <!-- Left Main Content Column -->
-            <main class="main-stories">
-                
-                <!-- Feature Story -->
-                <article class="lead-story">
-                    <p class="category-label">Feature Review</p>
-                    <h2><a href="#">The Twilight Symphony Returns to the Hinterland Range</a></h2>
-                    <div class="meta-info">By Alistair Vance • Cultural Correspondent</div>
-                    
-                    <div class="article-body">
-                        <p>Under the canopy of the ancient Maleny rainforest, classical strings met open-air acoustics this weekend. The annual Hinterland Symphony showcase gathered over four hundred patrons on the grass slopes, proving once again that the Coast’s appetite for high art extends far beyond its famous shorelines.</p>
-                        <p>The standout performance belonged to the local youth conservatory ensemble, who tackled Vivaldi's compositions with a fierce, modern tempo. As twilight faded behind the Glass House Mountains silhouette, the production escalated into an immersive light display mapped directly across the timber staging, leaving the crowd completely spellbound.</p>
-                    </div>
-                </article>
-
-                <!-- Secondary Story Row -->
-                <div class="secondary-stories">
-                    
-                    <div class="story-block">
-                        <p class="category-label">Theatre</p>
-                        <h3><a href="#">Local Theatre Co. Tackles Bold New Script in Caloundra</a></h3>
-                        <p>An intimate 80-seat black box theatre space sets the stage for an intense psychological drama written entirely by a Sunshine Coast local playwright. Opening night is Friday.</p>
-                    </div>
-
-                    <div class="story-block">
-                        <p class="category-label">Exhibitions</p>
-                        <h3><a href="#">Industrial Warehouse Reborn as Independent Art Gallery</a></h3>
-                        <p>A converted industrial unit in Noosaville opens its doors tonight, blending live jazz trios with raw concrete architecture to showcase emerging expressionist painters.</p>
-                    </div>
-
+            <div class="card-body">
+                <div>
+                    <h2>Velvet Echoes + Guests</h2>
+                    <p>Heavy fuzz pedals, melting projection art, and wall-to-wall bass distortion to blow the roof off.</p>
                 </div>
+                <ul class="gig-meta">
+                    <li><strong>Venue:</strong> <span>Solbar, Maroochydore</span></li>
+                    <li><strong>Doors Open:</strong> <span>20:00 till late</span></li>
+                    <li><strong>Damage:</strong> <span>$25 at door</span></li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="action-link">Grab Tickets //</a>
+            </div>
+        </div>
 
-            </main>
+        <!-- Card 2 -->
+        <div class="gig-card">
+            <div class="card-banner bg-purple">
+                <span>SUN 24 MAY</span>
+                <span class="genre-badge">FUNK & SOUL</span>
+            </div>
+            <div class="card-body">
+                <div>
+                    <h2>The Sunny Coast Horns</h2>
+                    <p>An explosive 9-piece brass ensemble dropping classic funk arrangements mixed with heavy hip-hop breakbeats.</p>
+                </div>
+                <ul class="gig-meta">
+                    <li><strong>Venue:</strong> <span>Mooloolaba Wharf Stage</span></li>
+                    <li><strong>Doors Open:</strong> <span>15:00 - Sunset</span></li>
+                    <li><strong>Damage:</strong> <span>FREE ENTRY</span></li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="action-link">Set Reminder //</a>
+            </div>
+        </div>
 
-            <!-- Right Sidebar Column -->
-            <aside class="sidebar">
-                <h3 class="sidebar-title">The Gig Wire</h3>
+        <!-- Card 3 -->
+        <div class="gig-card">
+            <div class="card-banner bg-green">
+                <span>THU 28 MAY</span>
+                <span class="genre-badge">SYNTHWAVE</span>
+            </div>
+            <div class="card-body">
+                <div>
+                    <h2>Laser Grid Sessions</h2>
+                    <p>Retro electronic producers taking over the craft brewery warehouse for an audiovisual laser night.</p>
+                </div>
+                <ul class="gig-meta">
+                    <li><strong>Venue:</strong> <span>Your Mate Brewing, Warana</span></li>
+                    <li><strong>Doors Open:</strong> <span>19:00 Sharp</span></li>
+                    <li><strong>Damage:</strong> <span>$15 online</span></li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="action-link">Secure Spot //</a>
+            </div>
+        </div>
 
-                <div class="wire-item">
-                    <span class="wire-date">SAT 23 MAY</span>
-                    <h4>Folklore & Strings Night</h4>
-                    <div class="wire-location">The Shared, Yandina</div>
+    </main>
+
+    <footer>
+        ⚡ KEEP THE COAST LOUD // MADE IN 2026 // CHECK VENUES FOR LAST MINUTE SCHEDULE CHANGES ⚡
+    </footer>
+
+</body>
+</html>
