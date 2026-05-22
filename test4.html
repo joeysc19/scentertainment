@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quietude — Sunshine Coast</title>
+    <style>
+        :root {
+            --bg: #fafafa;
+            --text: #111111;
+            --muted: #767676;
+            --border: #e5e5e5;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--font-main);
+            -webkit-font-smoothing: antialiased;
+            padding: 4rem 2rem;
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 2rem 1rem; }
+        }
+
+        .wrapper {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 5rem;
+        }
+
+        h1 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: var(--muted);
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        .section-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .list {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            margin-bottom: 6rem;
+        }
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+        }
+
+        .item-title {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .item-title:hover {
+            color: var(--muted);
+        }
+
+        .item-date {
+            font-size: 0.9rem;
+            color: var(--muted);
+            white-space: nowrap;
+        }
+
+        .item-meta {
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        .location {
+            color: var(--text);
+        }
+
+        footer {
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        @media (max-width: 480px) {
+            .item-header { flex-direction: column; gap: 0.25rem; }
+            footer { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        
+        <header>
+            <h1>Quietude</h1>
+            <p class="subtitle">A sparse, intentional index of acoustic performance, unamplified music, and quiet gatherings across the Sunshine Coast.</p>
+        </header>
+
+        <main>
+            <h2 class="section-title">Calendar</h2>
+            
+            <div class="list">
+                
+                <!-- Entry 1 -->
+                <div class="item">
+                    <div class="item-header">
+                        <a href="#" class="item-title">Solo Piano — Improvised Pieces</a>
+                        <span class="item-date">28 May</span>
+                    </div>
+                    <p class="item-meta">An afternoon session by the glass windows. <span class="location">The Gallery, Maleny</span>.</p>
+                </div>
+
+                <!-- Entry 2 -->
+                <div class="item">
+                    <div class="item-header">
+                        <a href="#" class="item-title">Classical Guitar Recital</a>
+                        <span class="item-date">04 June</span>
+                    </div>
+                    <p class="item-meta">Unamplified nylon string performance in the courtyard. <span class="location">The Atrium, Noosa</span>.</p>
+                </div>
+
+                <!-- Entry 3 -->
+                <div class="item">
+                    <div class="item-header">
+                        <a href="#" class="item-title">Vocal Ensembles & Polyphony</a>
+                        <span class="item-date">11 June</span>
+                    </div>
+                    <p class="item-meta">An evening of traditional acapella singing. <span class="location">All Saints, Yandina</span>.</p>
+                </div>
+
+                <!-- Entry 4 -->
+                <div class="item">
+                    <div class="item-header">
+                        <a href="#" class="item-title">Ambient Reed Organ & Drone</a>
+                        <span class="item-date">19 June</span>
+                    </div>
+                    <p class="item-meta">A slow-listening minimalist soundscape event. <span class="location">The Warehouse, Warana</span>.</p>
+                </div>
+
+            </div>
+        </main>
+
+        <footer>
+            <span>Updated weekly.</span>
+            <span>Sunshine Coast, Queensland.</span>
+        </footer>
+
+    </div>
+
+</body>
+</html>
