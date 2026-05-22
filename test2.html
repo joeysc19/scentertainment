@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Entertainment - Sunshine Coast</title>
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --accent: #f59e0b;
+            --text: #334155;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.5;
+            color: var(--text);
+            background-color: var(--bg);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0c4a6e, #0284c7);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: -0.05em;
+        }
+
+        header p {
+            margin: 0.5rem 0 0 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .category-section {
+            margin-bottom: 3rem;
+        }
+
+        .category-title {
+            font-size: 1.5rem;
+            color: #0f172a;
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 0.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .card h3 {
+            margin: 0 0 0.5rem 0;
+            color: #0f172a;
+            font-size: 1.25rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #e2e8f0;
+            color: #475569;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .details-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .details-list li {
+            margin-bottom: 0.4rem;
+        }
+
+        .details-list strong {
+            color: #0f172a;
+        }
+
+        .card-action {
+            padding: 1rem 1.5rem;
+            background-color: #f1f5f9;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .btn {
+            display: block;
+            text-align: center;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: #0f172a;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Sunshine Coast Live Entertainment</h1>
+        <p>Your guide to the best live music, theatre, and gigs across the coast</p>
+    </header>
+
+    <main>
+        <!-- Category 1: Dedicated Entertainment Venues -->
+        <section class="category-section">
+            <h2 class="category-title">Major Entertainment Venues</h2>
+            <div class="grid">
+                
+                <div class="card">
+                    <div class="card-content">
+                        <span class="tag">Theatre & Arts</span>
+                        <h3>The Events Centre</h3>
+                        <ul class="details-list">
+                            <li><strong>Location:</strong> 20 Minchinton St, Caloundra QLD 4551</li>
+                            <li><strong>Vibe:</strong> Premier performing arts space hosting touring music, comedy, and theatre.</li>
+                            <li><strong>Features:</strong> Fully seated auditorium, licensed bar, central location.</li>
+                        </ul>
+                    </div>
+                    <div class="card-action">
+                        <a href="https://theeventscentre.com.au" class="btn" target="_blank" rel="noopener">View Event Schedule</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <span class="tag">Live Gigs & Festivals</span>
+                        <h3>NightQuarter</h3>
+                        <ul class="details-list">
+                            <li><strong>Location:</strong> 8 Progress Dr, Birtinya QLD 4575</li>
+                            <li><strong>Vibe:</strong> Vibrant outdoor night market atmosphere with massive live concert stages.</li>
+                            <li><strong>Features:</strong> Street food stalls, multiple bars, family-friendly before late concerts.</li>
+                        </ul>
+                    </div>
+                    <div class="card-action">
+                        <a href="https://nightquarter.com.au" class="btn" target="_blank" rel="noopener">See Who's Playing</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Category 2: Surf Clubs and Pubs -->
+        <section class="category-section">
+            <h2 class="category-title">Pubs, Breweries & Surf Clubs</h2>
+            <div class="grid">
+
+                <div class="card">
+                    <div class="card-content">
+                        <span class="tag">Local Bands & Pub Rock</span>
+                        <h3>Solbar</h3>
+                        <ul class="details-list">
+                            <li><strong>Location:</strong> 10/12-20 Ocean St, Maroochydore QLD 4558</li>
+                            <li><strong>Vibe:</strong> The coast's iconic home of live original music and indie bands.</li>
+                            <li><strong>Features:</strong> Intimate bandroom, open mic nights, courtyard space.</li>
+                        </ul>
+                    </div>
+                    <div class="card-action">
+                        <a href="https://solbar.com.au" class="btn" target="_blank" rel="noopener">Check Gig Guide</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <span class="tag">Acoustic & Ocean Views</span>
+                        <h3>Surf Club Mooloolaba</h3>
+                        <ul class="details-list">
+                            <li><strong>Location:</strong> Mooloolaba Esplanade, Mooloolaba QLD 4557</li>
+                            <li><strong>Vibe:</strong> Relaxed weekend acoustic sessions right on the beachfront.</li>
+                            <li><strong>Features:</strong> Great dining options, ocean decks, regular weekend soloists.</li>
+                        </ul>
+                    </div>
+                    <div class="card-action">
+                        <a href="https://thesurfclub.com.au" class="btn" target="_blank" rel="noopener">What's On</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <span class="tag">Craft Beer & Roots</span>
+                        <h3>Brouhaha Brewery</h3>
+                        <ul class="details-list">
+                            <li><strong>Location:</strong> Maleny & Birtinya locations</li>
+                            <li><strong>Vibe:</strong> Laid-back brewery settings often featuring local acoustic talent.</li>
+                            <li><strong>Features:</strong> Award-winning craft beer, locally sourced food, daytime weekend sets.</li>
+                        </ul>
+                    </div>
+                    <div class="card-action">
+                        <a href="https://brouhahabrewery.com.au" class="btn" target="_blank" rel="noopener">Visit Website</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sunshine Coast Entertainment Guide. Always check official venue websites for up-to-date gig listings and ticket bookings.</p>
+    </footer>
+
+</body>
+</html>
+Use code with caution.Would you like help expanding this page? I can write code to add a custom event submission form, dynamic filter buttons for different towns (e.g., Noosa vs. Caloundra), or a dark mode toggle.AI can make mistakes, so double-check responses You said: write another page but differenthtml<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunny Coast After Dark | Live Music & Nightlife</title>
+    <style>
+        :root {
+            --dark-bg: #0b0f19;
+            --panel-bg: #1e293b;
+            --neon-pink: #f43f5e;
+            --neon-blue: #0ea5e9;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background-color: rgba(11, 15, 25, 0.9);
+            border-bottom: 2px solid var(--neon-pink);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--neon-pink);
+            text-shadow: 0 0 10px rgba(244, 63, 94, 0.5);
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.9rem;
+            border: 1px solid transparent;
+            padding: 0.4rem 0.8rem;
+        }
+
+        .nav-links a:hover {
+            border-color: var(--neon-blue);
+            color: var(--neon-blue);
+            box-shadow: 0 0 8px rgba(14, 165, 233, 0.3);
+        }
+
+        .hero {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: linear-gradient(180deg, #111827 0%, var(--dark-bg) 100%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            color: var(--neon-blue);
+            text-shadow: 0 0 15px rgba(14, 165, 233, 0.6);
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 1rem auto 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--panel-bg);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: -8px;
+            background-color: var(--dark-bg);
+            border: 4px solid var(--neon-pink);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left { left: 0; }
+        .right { left: 50%; }
+
+        .right::after { left: -8px; }
+
+        .content {
+            padding: 1.5rem;
+            background-color: var(--panel-bg);
+            position: relative;
+            border-radius: 4px;
+            border-left: 4px solid var(--neon-blue);
+        }
+
+        .time-badge {
+            display: inline-block;
+            background: var(--neon-pink);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .content h2 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.3rem;
+        }
+
+        .content p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .venue-info {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            border-top: 1px solid #334155;
+            padding-top: 0.5rem;
+            color: var(--neon-blue);
+        }
+
+        @media screen and (max-width: 600px) {
+            .timeline::after { left: 31px; }
+            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .timeline-item::after { left: 23px; }
+            .right { left: 0%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="logo">// SC.NIGHTS</a>
+        <div class="nav-links">
+            <a href="#gigs">GIGS</a>
+            <a href="#map">RADAR</a>
+            <a href="#about">ABOUT</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>SUNSET TO SUNRISE</h1>
+        <p>A chronological crawl through tonight's underground live music, warehouse sessions, and late gigs across the coast.</p>
+    </header>
+
+    <main class="container" id="gigs">
+        <div class="timeline">
+
+            <!-- 4:00 PM -->
+            <div class="timeline-item left">
+                <div class="content">
+                    <span class="time-badge">16:00 - SUNSET</span>
+                    <h2>Acoustic & Decks</h2>
+                    <p>Local singer-songwriters kick off the afternoon with raw acoustic sets followed by chill lo-fi vinyl beats.</p>
+                    <div class="venue-info">@ Outer Space Brewery, Noosa Hinterland</div>
+                </div>
+            </div>
+
+            <!-- 7:00 PM -->
+            <div class="timeline-item right">
+                <div class="content">
+                    <span class="time-badge">19:00 - WARMUP</span>
+                    <h2>Garage Rock Showcase</h2>
+                    <p>Three local high-energy garage bands loud enough to shake the dust off the rafters. Limited door tickets.</p>
+                    <div class="venue-info">@ The Shred Den, Warana</div>
+                </div>
+            </div>
+
+            <!-- 9:00 PM -->
+            <div class="timeline-item left">
+                <div class="content">
+                    <span class="time-badge">21:00 - HEADLINER</span>
+                    <h2>The Main Stage Set</h2>
+                    <p>Touring Australian indie-electronic acts bringing full audiovisual production and heavy basslines.</p>
+                    <div class="venue-info">@ Solbar Bandroom, Maroochydore</div>
+                </div>
+            </div>
+
+            <!-- 11:30 PM -->
+            <div class="timeline-item right">
+                <div class="content">
+                    <span class="time-badge">23:30 - LATE NIGHT</span>
+                    <h2>Neon Underground</h2>
+                    <p>Deep house, techno, and UK garage selectors taking over the booth until the early morning hours.</p>
+                    <div class="venue-info">@ Secret Location, Mooloolaba</div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
