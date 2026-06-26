@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- This line adds the favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>Sunshine Coast Entertainment</title>
+    <style>
+        :root {
+            --color-bg: #0a0a0c;
+            --color-surface: #121216;
+            --color-border: #22222a;
+            --color-text-primary: #f4f4f6;
+            --color-text-muted: #8e8e9a;
+            --color-accent: #c5a880; /* Subtle champagne gold */
+            --font-serif: 'Didot', 'Bodoni MT', 'Cormorant Garamond', 'Georgia', serif;
+            --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text-primary);
+            font-family: var(--font-sans);
+            letter-spacing: -0.01em;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Sophisticated Top Bar Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 4rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 1.5rem; }
+        }
+
+        .nav-logo {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-text-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+
+        .nav-links a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            transition: color 0.4s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Editorial Header Section */
+        header {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 4rem 4rem 4rem;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            align-items: end;
+            gap: 4rem;
+        }
+
+        @media (max-width: 968px) {
+            header {
+                grid-template-columns: 1fr;
+                padding: 4rem 1.5rem 2rem 1.5rem;
+                gap: 2rem;
+            }
+        }
+
+        .header-title-wrapper h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-weight: 300;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .header-title-wrapper span {
+            color: var(--color-accent);
+            font-style: italic;
+        }
+
+        .header-description {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--color-text-muted);
+            font-weight: 300;
+            padding-bottom: 0.5rem;
+            border-left: 1px solid var(--color-accent);
+            padding-left: 2rem;
+        }
+
+        @media (max-width: 968px) {
+            .header-description { padding-left: 1.5rem; }
+        }
+
+        /* Performance Directory Section */
+        .showcase {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 4rem 8rem 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .showcase { padding: 1rem 1.5rem 4rem 1.5rem; }
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--color-accent);
+            margin-bottom: 3rem;
+            display: block;
+        }
+
+        /* Row-Based List Layout instead of Cards */
+        .performance-row {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr 1fr;
+            gap: 2rem;
+            padding: 2.5rem 0;
+            border-bottom: 1px solid var(--color-border);
+            align-items: baseline;
+            transition: border-color 0.4s ease;
+        }
+
+        .performance-row:first-of-type {
+            border-top: 1px solid var(--color-border);
+        }
+
+        .performance-row:hover {
+            border-color: var(--color-accent);
+        }
+
+        @media (max-width: 968px) {
+            .performance-row {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+                padding: 2rem 0;
+            }
+        }
+
+        .perf-date {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: var(--color-accent);
+            font-style: italic;
+        }
+
+        .perf-meta h2 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .perf-meta p {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            font-weight: 300;
+            max-width: 500px;
+        }
+
+        .perf-venue {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-text-primary);
+        }
+
+        @media (max-width: 968px) {
+            .perf-venue { margin-top: 0.5rem; }
+        }
+
+        .perf-action {
+            text-align: right;
+        }
+
+        @media (max-width: 968px) {
+            .perf-action { text-align: left; margin-top: 1rem; }
+        }
+
+        .inline-link {
+            color: var(--color-text-primary);
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.4s ease;
+        }
+
+        .inline-link:hover {
+            color: var(--color-accent);
+        }
+
+        .inline-link::after {
+            content: '→';
+            font-family: system-ui;
+            transition: transform 0.4s ease;
+        }
+
+        .inline-link:hover::after {
+            transform: translateX(4px);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--color-border);
+            padding: 4rem;
+            text-align: center;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-text-muted);
+        }
+
+        @media (max-width: 768px) {
+            footer { padding: 3rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="nav-logo">SUNSHINE COAST ENTERTAINMENT_</a>
+<!-- After (Changes the word CONTACT to Gold) -->
+<ul class="nav-links">
+    <li><a href="#">ACTS</a></li>
+    <li><a href="#">ABOUT</a></li>
+    <li><a href="#" style="color: var(--color-accent);">CONTACT</a></li>
+</ul>
+
+
+    </nav>
+
+    <header>
+        <div class="header-title-wrapper">
+            <h1>Entertainment <span>options</span> Queensland</h1>
+        </div>
+        <div>
+            <p class="header-description">
+                Interactive Theatre - Roving Acts - Event Installations
+            </p>
+        </div>
+    </header>
+
+    <main class="showcase">
+        <span class="section-label">Corporate // Events // Functions // Private</span>
+
+        <!-- Performance Entry 1 -->
+        <div class="performance-row">
+            <div class="perf-date">Welcome Entertainment</div>
+            <div class="perf-meta">
+                <h2>More to come soon</h2>
+                <p></p>
+            </div>
+
+</div>
+            <div class="perf-action">
+                <a href="#" class="inline-link"></a>
+            </div>
+        </div>
+<br><br>
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 2rem; max-width: 1400px; margin: 2rem auto; padding: 0 4rem;">
+    <!-- Left Image -->
+    <img src="images/Logo-rounded-of-Sunshine-Coast-Entertainment.png" alt="Sunshine Coast Entertainment Logo" style="width: 100%; max-width: 500px; height: auto; padding: 20px; border: 0.5px solid #ffffff; border-radius: 15px;">
+    
+    <!-- Right Image -->
+    <img src="images/Noosa_Entertainment_logo_sm.png" alt="Noosa Entertainment Logo" style="width: 100%; max-width: 600px; height: auto; padding: 20px; border: 0.5px solid #ffffff; border-radius: 15px;">
+</div>
+
+    </body>
+</html>
